@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handleliste</title>
+  </head>
+
+  <body>
+    <h1>Tilfeldig dyr-generator</h1>
+    <input type="button" value="Vis tilfeldig dyr" id="show-btn" />
+    <div id="animals-container"></div>
+    <script>
+      const showBtn = document.querySelector("#show-btn");
+      const animalsContainer = document.querySelector("#animals-container");
+
+      let animalsArray = [
+        {
+          name: "Monstero",
+          imgUrl: "monster1.png",
+        },
+        {
+          name: "Noldus",
+          imgUrl: "monster2.png",
+        },
+        {
+          name: "Poppers",
+          imgUrl: "monster3.png",
+        },
+        {
+          name: "Blåtann",
+          imgUrl: "monster4.png",
+        },
+        {
+          name: "Suppert",
+          imgUrl: "monster5.png",
+        },
+      ];
+
+      showBtn.addEventListener("click", getRandomAnimal);
+
+      function getRandomAnimal() {
+        let randomAnimal = Math.floor(Math.random() * animalsArray.length);
+
+        createAnimalCard(animalsArray[randomAnimal]);
+      }
+
+      function createAnimalCard() {
+        const animalContainer = document.createElement("div");
+        const animalImage = document.createElement("img");
+        animalImage.src = "bildet sitt url";
+        const animalName = document.createElement("hi");
+        animalName.innerHTML = "monsteret sitt navn";
+
+        animalContainer.append(animalImage, animalName);
+        animalContainer.append(animalContainer);
+      }
+      console.log(animalsArray);
+    </script>
+  </body>
+</html>
